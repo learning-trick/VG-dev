@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VolgaDevelopment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header-container">
+                <!-- Добавил для удобства переход в название сайта на главную стр -->
+                <div class="header-logo"><a href="index.html">VolgaDevelopment</a></div>
+                <div class="header-tagline">Web-сайты для бизнеса, работающие на результат </div>
+                <a href="#" class="header-link"><div class="header-switch-theme"></div></a>
+                <div class="header-menu media-header-cont">
+                    <a href="#about-us" class="header-link">О нас</a>
+                    <a href="#services" class="header-link">Услуги</a>
+                    <a href="#blog" class="header-link">Блог</a>
+                </div>
+                <button class="hamburger-menu" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </header>
+        <!-- Главная страничка -->
+         <!-- Возникла очень большая проблема с тем, как прилепить на место эту кнопку. Перепробовал множество вариантов:
+              менял тег h1 на div, использовал свойство flex:right; пробовал менять flex-direction, в общем очень сложно и ничего не понятно, если можно, хотелось бы 
+              узнать всё таки как сделать нормально адекватно, а не через жопу, как это сделал я -->
+        <div class="main-page-container">
+            <div class="media-flex-container">
+                <h1 class="main-page-headline">Volga Development</h1>
+                <div class="header-tagline-media">Создание Web-сайтов для бизнеса, работающих на результат</div>
+            
+            <button class="main-page-order-button">Заказать сайт</button>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <div class="feedback-form-page-container">
+                        <div class="modal-headline">Готовы обсудить новый проект?</div>
+                        <div class="modal-description">Свяжитесь с нами любым удобным для вас способом или оставьте заявку. Менеджер свяжется с вами в течении 12 часов. </div>
+                        <form class="feedback-form" action="#" method="post">
+                            <div class="modal-user-input-data">
+                                <input type="text" placeholder="Имя" required>
+                                <input type="email" placeholder="E-mail" required>
+                                <input type="text" placeholder="Сообщение" required>
+                            </div>
+                            <div class="checkbox-agreement">
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <span class="agreement-line">Нажимая на кнопку, Вы соглашаетесь с </span><a href="#">политикой обработки персональных данных.</a>
+                            </div>
+                            <button id="feedback-button">Связаться</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <!-- О нас -->
+        <div class="about-us-headline" id="about-us">О нас</div>
+        <div class="about-us-container">
+            <h2 class="about-us-tagline">Мы создаем сайты</h2>
+            <div class="about-us-descriprion">
+                <p class="about-us-descriprion-paragraph">Компания является профессиональным разработчиком веб-сайтов, специализирующимся на создании уникальных и инновационных решений для наших клиентов.</p>
+                <p class="about-us-descriprion-paragraph">Мы заботимся о наших клиентах и предоставляем услуги высочайшего качества в разработке веб-продуктов. </p>
+            </div>
+        </div>
+        <!-- Услуги -->
+         <!-- Возникла проблема, с тем что не смог автоматизировать выравнивание. Чтобы не задавать всё отступами, а сделать по нормальному
+          Проблема в том, что я задал классу services-content-headline свойство flex:1; А классу services-content-description свойство flex:2;
+          Всё довольно хорошо работало, но возникла проблема с тем, что блок растягивался на всю свободную длинну и я не смог разобраться как пофиксить размер,
+          так как не смог ограничить блоки в размере по ширине-->
+          <!-- Так же, одна из проблем, это непонимание, как правильно здесь применять opacity. Ведь мне нужно применить к целому блоку services-content 
+               прозрачность, чтобы задать для нижнего бордера значение в 0.3, тогда как мой заголовок services-headline имеет значение opacity 0.5!!
+               И оно не меняется отдельно для каждого. Я не могу наследующему классу поставить значение выше, чем у родительского класса. В целом беда.
+               Пришлось опять делать костыль.
+               Апдейт, всё таки удалось изменить opacity, но я всё равно решительно не понимаю как задать значение бордеру, не создавая отдельный контейнер -->
+        <div class="services-page">
+            <div class="services-headline" id="services">Услуги</div>
+            <!-- Сайт визитка -->
+            <div class="services-content">
+                <div class="services-content-headline hidden-opacity">Сайт визитка</div>
+                <div class="media-serveces-content">
+                    <a href="" class="services-content-description-link services-hidden">
+                        <div class="services-content-description ">
+                            Сайты-визитки — это небольшие сайты, созданные для информационного представления определенного продукта или услуги.
+                        </div>
+                    </a>
+                    <a href="" class="services-content-link">
+                        <div class="link-content services-hidden">
+                            <span>Заказать услугу</span><img src="img/arrow-diagonal.png" alt="link">
+                        </div>
+                    </a>
+                </div>
+               <img src="img/arrow-down.png" alt="link" class="services-content-image" id="hover-image">
+            </div>
+            <!-- Лэндинг -->
+            <div class="services-content">
+                <div class="services-content-headline hidden-opacity">LandingPage</div>
+                <div class="media-serveces-content">
+                    <a href="" class="services-content-description-link services-hidden">
+                        <div class="services-content-description ">
+                            Предлагаем услуги по разработке качественных landing page, которые приводят большее количество потенциальных клиентов.
+                        </div>
+                    </a>
+                    <a href="" class="services-content-link">
+                        <div class="link-content services-hidden">
+                            <span>Заказать услугу</span><img src="img/arrow-diagonal.png" alt="link">
+                        </div>
+                    </a>
+                </div>
+               <img src="img/arrow-down.png" alt="link" class="services-content-image" id="hover-image">
+            </div>
+            <!-- Верстка по готовому дизайну  -->
+            <div class="services-content">
+                <div class="services-content-headline hidden-opacity">Верстка по готовому дизайну </div>
+                <div class="media-serveces-content">
+                <a href="" class="services-content-description-link services-hidden">
+                    <div class="services-content-description ">
+                        Pixel-perfect верстка - это технология, при которой сайт верстается с учетом каждого пикселя, что позволяет создать идеальную копию макета.
+                    </div>
+                </a>
+                <a href="" class="services-content-link">
+                    <div class="link-content services-hidden">
+                        <span>Заказать услугу</span><img src="img/arrow-diagonal.png" alt="link">
+                    </div>
+                </a>
+                </div>
+               <img src="img/arrow-down.png" alt="link" class="services-content-image" id="hover-image">
+            </div>
+            <!-- Подключение Яндекс и Google метрик -->
+            <div class="services-content">
+                <div class="services-content-headline hidden-opacity">Подключение Яндекс и Google метрик</div>
+                <div class="media-serveces-content">
+                    <a href="" class="services-content-description-link services-hidden">
+                        <div class="services-content-description ">
+                            Оптимизация позволяет увеличить посещаемость сайта и повысить конверсию, что важно для развития бизнеса.
+                        </div>
+                    </a>
+                    <a href="" class="services-content-link">
+                        <div class="link-content services-hidden">
+                            <span>Заказать услугу</span><img src="img/arrow-diagonal.png" alt="link">
+                        </div>
+                    </a>
+                </div>  
+               <img src="img/arrow-down.png" alt="link" class="services-content-image" id="hover-image">
+            </div>
+            <!-- Web-дизайн -->
+            <div class="services-content">
+                <div class="services-content-headline hidden-opacity">Web-дизайн</div>
+                <div class="media-serveces-content">
+                    <a href="" class="services-content-description-link services-hidden">
+                        <div class="services-content-description ">
+                            Уникальность дизайна и оригинальный подход – залог того, что ваш сайт будет замечен и запомнен пользователем.
+                        </div>
+                    </a>
+                    <a href="" class="services-content-link">
+                        <div class="link-content services-hidden">
+                            <span>Заказать услугу</span><img src="img/arrow-diagonal.png" alt="link">
+                        </div>
+                    </a>
+                </div>
+               <img src="img/arrow-down.png" alt="link" class="services-content-image" id="hover-image">
+            </div>
+        </div> 
+        <!-- Процесс работы -->
+        <div class="work-process-page">
+            <div class="work-process-headline" id="work-process">Процесс работы.</div>
+            <div class="work-process-content">
+                <div class="work-process-content-field">
+                    <div class="work-process-content-field-headline">Брифинг<span>01</span></div>
+                    <div class="work-process-content-field-list">
+                        <ul>
+                            <li>Заполнение брифа Вами</li>
+                            <li>Созваниваемся, вносим корректировки и уточнения</li>
+                            <li>После звонка заполняем бриф и отправляем вам на почту для согласования</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="work-process-content-field">
+                    <div class="work-process-content-field-headline">Дизайн<span>02</span></div>
+                    <div class="work-process-content-field-list">
+                        <ul>
+                            <li>UX/Аналитика</li>
+                            <li>Дизайн концепт</li>
+                            <li>Дизайн всех остальных</li>
+                            <li>Адаптивы</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="work-process-content-field">
+                    <div class="work-process-content-field-headline">Верстка<span>03</span></div>
+                    <div class="work-process-content-field-list">
+                        <ul>
+                            <li>Написание кода</li>
+                            <li>Адаптивы</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Тут вот не совсем понял как мне обратиться к work-process-content-field-headline через что, nth-child или ещё как то, в общем немножко схитрил, да-->
+                <div class="work-process-content-field">
+                    <div class="work-process-content-field-headline double-line-headline">Передача<span>04</span> сайта</div>
+                    <div class="work-process-content-field-list">
+                        <ul>
+                            <li>Передача хостинга</li>
+                            <li>Передача домена</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Преимущества -->
+         <!-- Создал доп класс, чтобы отцентрировать круги, потому что просто марджинами это выглядело не очень
+              Так же возникла проблема, которую можно наблюдать переодически у меня в коде, я не понимаю как обратиться к вложенному элементу через nth или как то ещё -->
+        <div class="advantages-page">
+            <div class="advantages-headline" id="advantages">Преимущества</div>
+            <div class="advantages-container">
+                <a href="" class="circle-group">
+                    <div class="visible-circle circle-flex">
+                        <div class="second-circle circle-flex">
+                            <div class="third-circle circle-flex">
+                                <div class="four-circle circle-flex"><span>Уникальность</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invisible-circle circle-flex"><span class="circle-flex invisible-circle-first-span">Сайт на коде имеет уникальный дизайн, большую функциональность  и возможность добавления практически любых элементов</span></div>
+                </a>
+                <a href="" class="circle-group">
+                    <div class="visible-circle circle-flex">
+                        <div class="second-circle circle-flex">
+                            <div class="third-circle circle-flex">
+                                <div class="four-circle circle-flex"><span>Функциональность</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invisible-circle circle-flex"><span class="circle-flex invisible-circle-other-span">Лучшая оптимизация для поисковых систем </span></div>
+                </a>
+                <a href="" class="circle-group">
+                    <div class="visible-circle circle-flex">
+                        <div class="second-circle circle-flex">
+                            <div class="third-circle circle-flex">
+                                <div class="four-circle circle-flex"><span>Скорость</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invisible-circle circle-flex"><span class="circle-flex invisible-circle-other-span">Страницы загружаются гораздо быстрее</span></div>
+                </a>
+                <a href="" class="circle-group">
+                    <div class="visible-circle circle-flex">
+                        <div class="second-circle circle-flex">
+                            <div class="third-circle circle-flex">
+                                <div class="four-circle circle-flex"><span>Контроль</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invisible-circle circle-flex"><span class="circle-flex invisible-circle-other-span">У вас полный контроль над проектом</span></div>
+                </a>
+            </div>
+        </div> 
+        <!-- Команда -->
+        <div class="team-page">
+            <div class="team-headline" id="team">Команда</div>
+            <div class="team-page-field">
+                <div class="team-page-description">
+                    <div class="team-page-description-headtag">Наша команда состоит из разработчиков дизайнеров и продуктовых менеджеров. </div>
+                    <div class="team-page-description-directions">
+                        <div class="team-page-directions-field">
+                            <div class="team-page-directions-subtitle">Разработка</div>
+                            <div class="team-page-directions-image"><img src="img/development-image.svg" alt="photo"></div>
+                        </div>
+                        <div class="team-page-directions-field">
+                            <div class="team-page-directions-subtitle">Дизайн</div>
+                            <div class="team-page-directions-image"><img src="img/design-image.svg" alt="photo"></div>
+                        </div>
+                        <div class="team-page-directions-field">
+                            <div class="team-page-directions-subtitle">Менеджмент</div>
+                            <div class="team-page-directions-image"><img src="img/managment-image.svg" alt="photo"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="team-page-image"> <img src="img/team-main-image.svg" alt="photo"></div>
+            </div>
+        </div>  
+        <!-- Блог -->
+        <div class="blog-page">
+            <div class="blog-page-headline" id="blog">Блог</div>
+            <div class="blog-page-subtitle">Мы собрали для вас самые информативные лонгриды про веб-дизайн и бизнес.</div>
+            <div class="blog-page-field">
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как создать сайт для вашего бизнеса: советы от экспертов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как сайт может увеличить количество клиентов и продаж в вашем бизнесе</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Важность мобильной адаптации сайта для привлечения новых клиентов в бизнес</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как использовать сайт для повышения уровня лояльности клиентов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как создать сайт для вашего бизнеса: советы от экспертов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как сайт может увеличить количество клиентов и продаж в вашем бизнесе</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Важность мобильной адаптации сайта для привлечения новых клиентов в бизнес</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как использовать сайт для повышения уровня лояльности клиентов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как создать сайт для вашего бизнеса: советы от экспертов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как сайт может увеличить количество клиентов и продаж в вашем бизнесе</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Важность мобильной адаптации сайта для привлечения новых клиентов в бизнес</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+                <a href="" class="blog-page-content">
+                    <div class="blog-page-content-headline">01.04.23</div>
+                    <div class="blog-page-content-description">Как использовать сайт для повышения уровня лояльности клиентов</div>
+                    <div class="blog-page-content-image"><img src="img/diagonal_arrow_big.png" alt="link"></div>
+                </a>
+            </div>
+        </div>  
+        <!-- Обратная связь -->
+        <div class="feedback-form-page">
+            <div class="feedback-form-page-headline">Связь</div>
+            <div class="feedback-form-page-container">
+                <div class="feedback-form-page-container-headline">Готовы обсудить новый проект?</div>
+                <div class="feedback-form-page-container-description">Свяжитесь с нами любым удобным для вас способом или оставьте заявку. Менеджер свяжется с вами в течении 12 часов. </div>
+                <form class="feedback-form" action="#" method="post">
+                    <div class="feedback-user-input-data">
+                        <input type="text" placeholder="Имя" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="text" placeholder="Сообщение" required>
+                    </div>
+                    <div class="checkbox-agreement">
+                        <label class="checkbox-custom">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                            <span class="agreement-line">Нажимая на кнопку, Вы соглашаетесь с </span><a href="#">политикой обработки персональных данных.</a>
+                    </div>
+                    <!-- Спасибо Антону Сергеевичу, за чудесную кнопку, мне понравилось. Лайк, подписка -->
+                    <button id="feedback-button">Связаться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-first-line"><img src="img/2023.svg" alt="2023"></div>
+            <div class="footer-media-info-container footer-bg-color">
+                <div class="footer-menu">
+                    <a href="#about-us">О нас</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#work-process">Процесс работы</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#team">Команда</a>
+                    <a href="#blog">Блог</a>
+                </div>
+                <div class="footer-social-media">
+                    <a href="">Телеграм</a>
+                    <a href="">Вконтакте</a>
+                    <a href="">Эл.адрес</a>
+                </div>
+            </div>
+        <div class="footer-second-line footer-bg-color"><img class="theme-img volga-img" src="img/volga.svg" alt="VOLGA"></div>
+        <div class="footer-third-line footer-bg-color"><img class="theme-img develop-img" src="img/develop.svg" alt=""></div>
+        <div class="footer-four-line footer-bg-color">
+            <img class="theme-img ment-img" src="img/ment.svg" alt="">
+            <div class="footer-info-container">
+                <div class="footer-menu">
+                    <a href="#about-us">О нас</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#work-process">Процесс работы</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#team">Команда</a>
+                    <a href="#blog">Блог</a>
+                </div>
+                <div class="footer-social-media">
+                    <a href="">Телеграм</a>
+                    <a href="">Вконтакте</a>
+                    <a href="">Эл.адрес</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-footer-line">
+            <div class="footer-rights-text">© Volga Development 2023. Все права защищены.</div>
+            <div class="footer-privat-policy"><a href="privat_policy.html">Политика конфиденциальности.</a></div>
+        </div>
+
+    </footer>
+    <!-- Добавил скрипта(украл), чтобы при наведении у меня стрелочка снизу вверх пошла. Пробовал сделать через ссылку, чтобы ей задать свойство background 
+         и через css сделать смену картинок, но ничего не вышло. Так же добавил скрипт(очень нагло украл у гпт(сорре ещё учусь) чтобы менять цвет по красоте-->
+            <script src="js/script.js"></script>
+</body>
+</html>

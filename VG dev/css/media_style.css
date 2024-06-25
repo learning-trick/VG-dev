@@ -1,0 +1,358 @@
+/* Сделал "адаптив", только на планшетную ориентацию, так как для мобильной будет всё тоже самое, только
+с меньшими значениями. Стало очень плохо от того, что получилось, простите что смотрите это.
+Очень много чего не получилось, очень много косяков, но скорее всего, без полной переработки
+сайта, я ничего не сделаю нормально */
+@media (max-width: 820px) {
+    .main-container{
+        max-width: 820px;
+    }
+    .header{
+        max-width: 820px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(229, 220, 207);
+        z-index: 9999;
+        gap: 30px;
+        margin: 0;
+    }
+    .media-header-cont a{
+        margin: 0;
+        color: rgb(33, 33, 33);
+        font-family: Inter;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 110%;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+    .header-logo{
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 90%;
+        letter-spacing: 0px;
+        text-align: left;
+        margin-right: 0;
+    }
+    .header-tagline{
+        display: none;
+        margin: 0;
+    }
+    .header-menu.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hamburger-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Главная стр */
+    .main-page-container{
+        margin-left: 20px;
+        margin-top: 115px;
+    }
+    .main-page-headline{
+        display: block;
+        width: 597px;
+        height: 160px;
+        font-size: 97px;
+        font-weight: 300;
+        line-height: 90%;
+        letter-spacing: -10.36px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+    .header-tagline-media{
+        display: block;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: left;
+        width: 500px;
+        height: 52px;
+        margin-top: 60px;
+    }
+    .main-page-order-button{
+        position:static;
+        display: flex;
+        margin: 0;
+        margin-top: 40px;
+        justify-content: center;
+        align-items:center;
+    }
+    .about-us-container{
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    .about-us-headline{
+        margin-top: 110px;
+        margin-left: 20px;
+    }
+    .about-us-descriprion{
+        flex-direction: column;
+    }
+    .about-us-descriprion-paragraph{
+        width: 590px;
+        height: 66px;
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .services-page{
+        margin-top: 110px;
+        margin-left: 20px;
+    }
+    .services-headline{
+        border-bottom: 1px solid rgb(33, 33, 33);
+        width: 750px;
+    }
+    .services-content{
+        border-bottom: 1px solid rgb(33, 33, 33);
+        width: 750px;
+    }
+    .services-content-headline{
+        display: block;
+        color: rgb(33, 33, 33);
+    }
+    .services-content-description-link{
+        display: block;
+        height: 100px;
+    }
+    .services-content-description{
+        width: 300px;
+        height: 100px;
+        margin-left: 50px;
+        margin-bottom: 0;
+    }
+    .link-content{
+        display: block;
+        margin: 0;
+    }
+    .link-content span{
+        margin-left: 50px;
+    }
+    .services-content-image{
+        display: none;
+    }
+    .media-serveces-content{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .work-process-page{ 
+        margin: 100px 20px 0px 20px;
+        width: 800px;
+    }
+    .work-process-content{
+        flex-wrap: wrap;
+    }
+    .work-process-content-field{
+        margin-bottom: 20px;
+    }
+    .advantages-page{
+        margin-top: 115px;
+        margin-left: 20px;
+    }
+    .advantages-container{
+        flex-wrap: wrap;
+    }
+    .circle-group{
+        pointer-events: none;
+        margin: 0;
+        width: 280px;
+        margin-right: 90px;
+        height: 200px;
+    }
+    .visible-circle{
+        border: 0;
+        margin: 0;
+        width: 187px;
+        height: 22px;
+    }
+    .second-circle{
+        border: 0;
+        margin: 0;
+        width: 187px;
+        height: 22px;
+    }
+    .third-circle{
+        border: 0;
+        margin: 0;
+        width: 187px;
+        height: 22px;
+    }
+    .four-circle{
+        border: 0;
+        display: block;
+        margin: 0;
+        width: 187px;
+        height: 22px;
+        margin-bottom: 10px;
+    }
+    .four-circle span{
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: -1px;
+        text-align: left;
+    }
+    .invisible-circle{
+        margin-top: 20px;
+        display: block;
+        position: relative;
+        opacity: 1;
+        border: 0;
+        pointer-events: none;
+    }
+    .team-page{
+        margin: 100px 20px 0px 20px;
+        max-width: 820px;
+    }
+    .team-page-image{
+        display: none;
+    }
+    .blog-page {
+        margin: 100px 20px 0px 20px;
+    }
+    .blog-page-content-image{
+        display: none;
+        max-width: 820px;
+    }
+    .feedback-form-page{
+        margin: 150px 20px 0px 20px;
+        max-width: 820px;
+    }
+    .feedback-form-page-container-headline{
+        width: 600px;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 90%;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .feedback-form-page-container-description{
+        text-align: center;
+    }
+    .feedback-form{
+        width: 366px;
+        height: 282px;
+    }
+    .feedback-user-input-data{
+        width: 360px;
+        height: 200px;
+    }
+    .footer{
+        margin-top: 150px;
+    }
+    .footer-first-line{
+        top: 80px;
+        display: flex;
+        z-index: 1;
+        
+    }
+    .footer-first-line img{
+        width: 760px;
+    }
+    .footer-media-info-container{
+        display:flex;
+        width: 760px;
+        height: 150px;
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+        border-radius: 20px;
+        z-index: 2;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .footer-menu{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .footer-social-media{
+        margin-top: 20px;
+    }
+    .footer-second-line{
+        width: 740px;
+        height: 105px;
+        padding: 0;
+        padding-left: 20px;
+        margin: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 20px;
+        z-index: 0;
+        margin-bottom: 10px;
+    }
+    .footer-second-line img{
+        
+        height: 105px;
+        padding-left: -110px;
+    }
+    .footer-third-line{
+        width: 740px;
+        height: 105px;
+        padding: 0;
+        margin-left: 20px;
+        padding-left: 20px;
+        border-radius: 20px;
+        display: flex;
+        margin-bottom: 10px;
+        align-items:center;
+
+    }
+    .footer-third-line img{
+       
+        height: 105px;
+    }
+    .footer-four-line{
+        padding: 0;
+        padding-left: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        width: 740px;
+        height: 105px;
+    }
+    .theme-img{
+        height: 105px;
+    }
+    .footer-info-container{
+        display: none;
+
+    }
+    .footer-footer-line{
+        width: 760px;
+        height: 78px;
+        padding: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 20px;
+    }
+    .footer-rights-text{
+        padding-left: 20px;
+        padding-top: 20px;
+        width: 181px;
+    }
+    .footer-privat-policy{
+        padding-top: 20px;
+    }
+}
